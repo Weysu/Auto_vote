@@ -33,7 +33,7 @@ class ServeurMcVoter(BaseVoter):
         """
         try:
             self.logger.info("Navigation vers %s", self.url)
-            await page.goto(self.url, wait_until="networkidle", timeout=15000)
+            await page.goto(self.url, wait_until="domcontentloaded", timeout=30000)
 
             for selector in _PSEUDO_SELECTORS:
                 field = page.locator(selector).first
