@@ -1,0 +1,6 @@
+playwright
+apscheduler
+pyyaml
+python-dotenv
+2captcha-python
+pytz
