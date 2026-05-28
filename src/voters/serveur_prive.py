@@ -24,7 +24,9 @@ class ServeurPriveVoter(BaseVoter):
             # 1. Navigation
             self.logger.info("Navigation vers %s", self.url)
             await page.goto(self.url, wait_until="domcontentloaded", timeout=30000)
-            await page.wait_for_selector("input#username", timeout=30000)
+            await page.wait_for_load_state("domcontentloaded")
+            await page.wait_for_timeout(3000)
+            await page.wait_for_selector("input#username", timeout=20000)
 
             # 2. Remplir le pseudo
             await page.locator("input#username").fill(self.pseudo)
