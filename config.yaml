@@ -5,13 +5,16 @@ sites:
     url: https://www.liste-serveurs-minecraft.org/vote/?idc=202832
     interval_hours: 3
     jitter_seconds: 900
+    enabled: true
 
   - name: serveur_prive
     url: https://serveur-prive.net/minecraft/neodium-2142/vote
     interval_hours: 1.5
     jitter_seconds: 900
+    enabled: false
 
   - name: serveur_mc
     url: https://serveur-minecraft.com/2642
     interval_hours: 3
     jitter_seconds: 900
+    enabled: true

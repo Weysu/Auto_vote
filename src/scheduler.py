@@ -124,6 +124,10 @@ def setup_scheduler(config: dict) -> AsyncIOScheduler:
         name = site["name"]
         url  = site["url"]
 
+        if not site.get("enabled", True):
+            logger.info("Site %s disabled, skipping", name)
+            continue
+
         voter_class = _VOTER_CLASSES.get(name)
         if voter_class is None:
             logger.warning("Site inconnu ignoré : %s", name)
